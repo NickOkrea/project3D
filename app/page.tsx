@@ -35,7 +35,7 @@ export default function Home() {
     
 
       {/* modelo 3d */}      
-      <div className="col-span-2 lg:col-span-1 h-full">
+      <div className="col-span-2 lg:col-span-1 h-[60%] lg:h-full">
           <Canvas
             style={{backgroundColor:"black" }}
             shadows
@@ -62,7 +62,7 @@ export default function Home() {
       </div>
 
       {/* main */}
-      <main className="col-span-3 lg:col-span-1 absolute lg:relative right-0 lg:right-auto h-full w-3/4 lg:w-auto pl-5 bg-transparent backdrop-blur-md overflow-scroll z-10 lg:z-auto lg:backdrop-blur-none">
+      <main className="col-span-3 lg:col-span-1 absolute lg:relative right-0 lg:right-auto h-full w-3/4 lg:w-auto pl-5 bg-transparent backdrop-blur-xs overflow-scroll z-10 lg:z-auto lg:backdrop-blur-none">
       <p>Lorem ipsum, dolor sit amet consectetur
       adipisicing elit. Doloremque vero amet
       deleniti quia minima dolores nam, accusamus
