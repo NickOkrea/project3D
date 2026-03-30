@@ -1,29 +1,23 @@
 "use client"
 
+import { Canvas, useLoader } from "@react-three/fiber";
+import {OrbitControls} from "@react-three/drei";
 import Image from "next/image";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useRef } from "react";
-import type { Mesh } from "three";
+import Camera from "./components/camera";
+import Matcap from "./components/matcap";
+import { Suspense } from "react";
+import Bricks from "./components/bricks";
+import Lights from "./components/Lights";
+import Minecraft from "./components/Minecraft";
+import * as THREE from "three";
 
-function Box() {
-  const meshRef = useRef<Mesh>(null);
-  
-  useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta;
-      meshRef.current.rotation.y += delta * 0.5;
-    }
-  });
-  
-  return (
-    <mesh ref={meshRef}>
-      <boxGeometry args={[2, 2, 2]} />
-      <meshStandardMaterial color="hotpink" />
-    </mesh>
-  );
-}
+
+
+
 
 export default function Home() {
+
+  
   
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -36,20 +30,30 @@ export default function Home() {
           height={20}
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left w-full">
-          <Canvas 
-            style={{ width: '100%', maxWidth: '400px', height: '400px', background: '#f0f0f0' }}
-            camera={{ position: [0, 0, 5], fov: 75 }}
-            gl={{ 
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left w-full h-150">
+          <Canvas
+            style={{backgroundColor:"white"}}
+            shadows
+            gl={{
               antialias: true,
-              alpha: false,
-              powerPreference: "high-performance"
+              toneMapping: THREE.ReinhardToneMapping,
+              toneMappingExposure: 1.5
             }}
           >
-            <ambientLight intensity={0.8} />
-            <directionalLight position={[5, 5, 5]} intensity={1} />
-            <Box />
+            <Camera/>
+            <Lights />
+            
+            <Suspense fallback={null}>   
+              {/* <Bricks /> */}
+              <Minecraft />
+              
+            </Suspense>
+           
+
+            
+            <OrbitControls target={[1, 10, 0]}/>
           </Canvas>
+          
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
