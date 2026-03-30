@@ -20,19 +20,24 @@ export default function Home() {
   
   
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left w-full h-150">
+    <div className="w-screen h-screen flex flex-col items-center justify-between bg-black">
+      
+      <nav className="w-full h-16 flex items-center justify-between px-10 bg-amber-900 lg:w-auto">
+        <h1 className="text-2xl font-bold">Logo</h1>
+        <ul className="flex items-center gap-10">
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+      
+      <div className="relative h-full w-full grid grid-cols-4 lg:grid-cols-2">
+    
+
+      {/* modelo 3d */}      
+      <div className="col-span-2 lg:col-span-1 h-full">
           <Canvas
-            style={{backgroundColor:"white"}}
+            style={{backgroundColor:"black" }}
             shadows
             gl={{
               antialias: true,
@@ -54,33 +59,72 @@ export default function Home() {
             <OrbitControls target={[1, 10, 0]}/>
           </Canvas>
           
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </div>
+
+      {/* main */}
+      <main className="col-span-3 lg:col-span-1 absolute lg:relative right-0 lg:right-auto h-full w-3/4 lg:w-auto pl-5 bg-transparent backdrop-blur-md overflow-scroll z-10 lg:z-auto lg:backdrop-blur-none">
+      <p>Lorem ipsum, dolor sit amet consectetur
+      adipisicing elit. Doloremque vero amet
+      deleniti quia minima dolores nam, accusamus
+      cum nesciunt totam perferendis quos,
+      quod tenetur, exercitationem ipsam
+      eveniet illum natus omnis reprehenderit
+      doloribus! Enim expedita soluta fuga,
+      quia, consequuntur non temporibus,
+      nostrum voluptas exercitationem
+      saepe officiis repellat tempora
+      omnis totam eos minima reprehenderit
+      distinctio dolores excepturi architecto aspernatur nulla?
+      Laudantium nemo exercitationem deserunt?
+      Beatae eligendi praesentium porro ullam,
+      quasi sapiente illum harum cupiditate,
+      explicabo quos, quia inventore corrupti
+      neque sequi. Fugiat, beatae libero incidunt
+      aliquid nisi quaerat impedit, saepe illum possimus
+      in vel aspernatur tempore eius? Officia, voluptas.
+      Harum consequuntur fuga adipisci sapiente veniam
+      asperiores sint eum dolor corporis. Ipsa cum nihil,
+      perferendis officia harum ex nam ullam provident
+      explicabo sequi aut, tenetur doloribus ratione
+      praesentium molestiae minima velit debitis?
+      Facere laudantium praesentium repellendus harum
+      placeat quasi nesciunt recusandae consectetur deleniti
+      ullam quam, dicta, fuga illo repellat perspiciatis,
+      facilis officiis consequuntur? Quia, nostrum eligendi,
+      explicabo ex quasi animi dignissimos ab, esse quibusdam
+      et suscipit veritatis officiis soluta obcaecati!
+      Labore voluptatem similique eligendi dicta explicabo
+      beatae quos ab nostrum quod facere earum, minus ea optio
+      a sapiente aspernatur? Possimus molestiae quasi
+      quos fugiat blanditiis quae iste ipsum voluptas voluptatibus
+      laboriosam odio, odit laudantium fuga alias dolores
+      velit expedita, mollitia animi placeat magni est?
+      Nihil nostrum neque libero. Pariatur vitae voluptates,
+      esse excepturi vel totam minima quisquam natus cum
+      minus aliquam culpa ipsum, iste odit ipsa, atque
+      repellat enim doloremque sunt. Accusantium molestias
+      non officia? Sapiente a tenetur, quasi sint facere
+      eaque sunt eum facilis autem perspiciatis architecto.
+      Maiores, ipsum quos aperiam laboriosam deleniti exercitationem
+      iure ducimus aut labore odio eveniet aliquam autem,
+      architecto impedit laborum hic esse incidunt fugiat enim obcaecati
+      qui! Architecto ex velit sint dolores pariatur ullam repellat,
+      nobis necessitatibus nihil cupiditate quod, veniam facere
+      deserunt voluptate quo rem similique laudantium delectus
+      voluptatem nemo totam. Consequatur sunt consectetur velit
+      maxime, consequuntur culpa praesentium, omnis optio deserunt
+      officiis provident assumenda incidunt eius adipisci?
+      Animi voluptatibus quo vero cumque sapiente totam maiores quas,
+      minima autem ducimus, reprehenderit atque ut porro suscipit
+      aliquid dicta aperiam ipsa quis hic. Ducimus ipsam repudiandae
+      ipsum dignissimos animi quas perferendis, provident,
+      ullam expedita numquam eaque, aliquam nulla? Facilis
+      quisquam architecto, ab nam nostrum officia sed nobis
+     </p>
+
       </main>
+
+      </div>
     </div>
   );
 }
