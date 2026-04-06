@@ -4,9 +4,9 @@ export default function Camera() {
 
     return (
         <PerspectiveCamera 
-            position={[0, 2, 5]} /* x, y, z */
+            position={[0, 5, 6]} /* x, y, z */
             makeDefault
-            fov={80} />
+            fov={75} />
 
     )
 }
